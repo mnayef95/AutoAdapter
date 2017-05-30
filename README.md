@@ -11,8 +11,6 @@ Make RecyclerView adapter easy with Adapter annotations.
 
 **Project-level build.gradle** \(\<project>/build.gradle):
 ```
-#!Groovy
-
 allprojects {
     repositories {
         ...
@@ -23,8 +21,6 @@ allprojects {
 **App-level build.gradle** \(\<project>/\<app-module>/build.gradle):
 
 ```
-#!Groovy
-
 compile 'com.github.mnayef:AAdapter:v1.0.1'
 ```
 
@@ -49,9 +45,6 @@ compile 'com.github.mnayef:AAdapter:v1.0.1'
 
 
 ```
-#!java
-
-
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -138,8 +131,6 @@ public class MixModel {
 
 
 ```
-#!xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -277,8 +268,6 @@ public class MixModel {
 
 
 ```
-#!java
-
 RecyclerView rvAll = (RecyclerView) view.findViewById(R.id.rv_all);
 rvAll.setLayoutManager(new LinearLayoutManager(getContext()));
 rvAll.setAdapter(new MixAdapter(TestData.getInstance().getMix()));
