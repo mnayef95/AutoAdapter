@@ -32,7 +32,7 @@ compile 'com.github.mnayef:AAdapter:v1.0.1'
 
 ### Support components ###
 
-* ImageView
+* ImageView (Picasso, Fresco(GIF))
 * TextView
 * CheckBox
 * RadioButton
