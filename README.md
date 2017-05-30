@@ -1,6 +1,6 @@
 # AutoAdapter #
 
-Make RecyclerView adapter easy with Apdater annotations.
+Make RecyclerView adapter easy with Adapter annotations.
 
 ### What is AutoAdapter? ###
 
