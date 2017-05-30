@@ -44,3 +44,5 @@ compile 'com.github.mnayef:AAdapter:v1.0.1'
 
 * Create Java Model.
 * Add **Adapter Annotation** above of class name
+
+**Example:**
