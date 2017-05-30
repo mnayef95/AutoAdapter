@@ -264,7 +264,7 @@ public class MixModel {
 </LinearLayout>
 ```
 
-**In your activity use like this**
+**Rebuild your project and use in your activity like this**
 
 
 ```
