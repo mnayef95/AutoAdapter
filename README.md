@@ -272,3 +272,14 @@ public class MixModel {
     </android.support.v7.widget.CardView>
 </LinearLayout>
 ```
+
+**In your activity use like this**
+
+
+```
+#!java
+
+RecyclerView rvAll = (RecyclerView) view.findViewById(R.id.rv_all);
+rvAll.setLayoutManager(new LinearLayoutManager(getContext()));
+rvAll.setAdapter(new MixAdapter(TestData.getInstance().getMix()));
+```
