@@ -13,12 +13,12 @@ Make RecyclerView adapter easy with Adapter annotations.
 ```
 #!Groovy
 
-   allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 **App-level build.gradle** \(\<project>/\<app-module>/build.gradle):
 
