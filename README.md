@@ -10,6 +10,7 @@ Make RecyclerView adapter easy with Adapter annotations.
 ### How do I get set up? ###
 
 **Project-level build.gradle** \(\<project>/build.gradle):
+-----
 ```
 allprojects {
     repositories {
@@ -19,6 +20,7 @@ allprojects {
 }
 ```
 **App-level build.gradle** \(\<project>/\<app-module>/build.gradle):
+-----
 
 ```
 provided 'com.github.mnayef.AutoAdapter:annotations:v1.0.0'
@@ -272,4 +274,23 @@ public class MixModel {
 RecyclerView rvAll = (RecyclerView) view.findViewById(R.id.rv_all);
 rvAll.setLayoutManager(new LinearLayoutManager(getContext()));
 rvAll.setAdapter(new MixAdapter(TestData.getInstance().getMix()));
+```
+
+
+**License**
+-----
+```
+Copyright 2017 Mohamed Hamdan
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
