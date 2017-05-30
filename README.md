@@ -1,28 +1,46 @@
 # AutoAdapter #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Make RecyclerView adapter easy with Apdater annotations.
 
 ### What is AutoAdapter? ###
 
-* Quick summary
+* Auto create RecyclerView adapter from model with annotations.
 * 1.0.0
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+**Project-level build.gradle** \(\<project>/build.gradle):
+```
+#!Groovy
 
-### Contribution guidelines ###
+   allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+**App-level build.gradle** \(\<project>/\<app-module>/build.gradle):
 
-* Writing tests
-* Code review
-* Other guidelines
+```
+#!Groovy
 
-### Who do I talk to? ###
+compile 'com.github.mnayef:AAdapter:v1.0.1'
+```
 
-* Repo owner or admin
-* Other community or team contact
+
+
+### Support components ###
+
+* ImageView
+* TextView
+* CheckBox
+* RadioButton
+* VideoView
+* Visibility
+* Clickable
+
+### How to use? ###
+
+* Create Java Model.
+* Add **@Adapter** above of class name
