@@ -21,7 +21,8 @@ allprojects {
 **App-level build.gradle** \(\<project>/\<app-module>/build.gradle):
 
 ```
-compile 'com.github.mnayef:AAdapter:v1.0.1'
+provided 'com.github.mnayef.AutoAdapter:annotations:v1.0.0'
+    annotationProcessor 'com.github.mnayef.AutoAdapter:compiler:v1.0.0'
 ```
 
 
