@@ -15,6 +15,7 @@ import com.mnayef.autoadapter.R;
 import com.mnayef.autoadapter.fragments.AllFragment;
 import com.mnayef.autoadapter.fragments.FrescoFragment;
 import com.mnayef.autoadapter.fragments.GifFragment;
+import com.mnayef.autoadapter.fragments.LinkPreviewFragment;
 import com.mnayef.autoadapter.fragments.MixFragment;
 import com.mnayef.autoadapter.fragments.PFWithoutProgressFragment;
 import com.mnayef.autoadapter.fragments.PicassoFragment;
@@ -89,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 case R.id.nav_all:
                     fragmentClass = AllFragment.class;
+                    break;
+                case R.id.nav_links:
+                    fragmentClass = LinkPreviewFragment.class;
                     break;
                 default:
                     fragmentClass = MixFragment.class;

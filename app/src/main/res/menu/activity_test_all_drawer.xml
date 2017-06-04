@@ -34,6 +34,10 @@
             android:id="@+id/nav_mix"
             android:icon="@drawable/ic_all_inclusive_black_24dp"
             android:title="Mix" />
+        <item
+            android:id="@+id/nav_links"
+            android:icon="@drawable/ic_link"
+            android:title="Link Preview" />
     </group>
 
 </menu>

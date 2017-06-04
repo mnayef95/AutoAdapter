@@ -22,6 +22,7 @@ public class ClassesNames {
     public static final ClassName IMAGE_VIEW = ClassName.get("android.widget", "ImageView");
     public static final ClassName CHECK_BOX = ClassName.get("android.widget", "CheckBox");
     public static final ClassName RADIO_BUTTON = ClassName.get("android.widget", "RadioButton");
+    public static final ClassName LINK_PREVIEW = ClassName.get("com.mnayef.library.view", "LinkPreviewView");
     public static final ClassName SIMPLE_DRAWEE_VIEW = ClassName.get("com.facebook.drawee.view", "SimpleDraweeView");
     public static final ClassName FRESCO = ClassName.get("com.facebook.drawee.backends.pipeline", "Fresco");
     public static final ClassName URI_UTIL = ClassName.get("com.facebook.common.util", "UriUtil");

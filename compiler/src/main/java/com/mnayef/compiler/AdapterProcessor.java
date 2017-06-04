@@ -5,6 +5,7 @@ import com.mnayef.annotations.Adapter;
 import com.mnayef.annotations.Check;
 import com.mnayef.annotations.Click;
 import com.mnayef.annotations.Image;
+import com.mnayef.annotations.Link;
 import com.mnayef.annotations.Radio;
 import com.mnayef.annotations.Text;
 import com.mnayef.annotations.Video;
@@ -54,7 +55,8 @@ public final class AdapterProcessor extends AbstractProcessor {
             Click.class,
             Radio.class,
             Check.class,
-            Visibility.class
+            Visibility.class,
+            Link.class
     );
 
     private String adapterName;
@@ -112,6 +114,9 @@ public final class AdapterProcessor extends AbstractProcessor {
 
                 Visibility visibility = enclosedElement.getAnnotation(Visibility.class);
                 if (visibility != null) fields.put(enclosedElement, visibility);
+
+                Link link = enclosedElement.getAnnotation(Link.class);
+                if (link != null) fields.put(enclosedElement, link);
             }
 
             onBindViewHolder();
@@ -263,6 +268,17 @@ public final class AdapterProcessor extends AbstractProcessor {
                 viewHolder.addField(fieldSpec);
                 createdFields.put(String.valueOf(field.value()), fieldSpec.name);
                 BindingUtil.bindVisibilityView(onBindViewHolder, fieldSpec.name, fieldSpec.name);
+            } else {
+                BindingUtil.bindVisibilityView(onBindViewHolder, createdFields.get(String.valueOf(field.value())), fieldSpec.name);
+            }
+        } else if (baseField instanceof Link) {
+            Link field = (Link) baseField;
+            fieldSpec = FieldSpec.builder(ClassesNames.LINK_PREVIEW, element.getSimpleName().toString(), Modifier.PRIVATE).build();
+            if (createdFields.get(String.valueOf(field.value())) == null) {
+                FindViewUtil.findLinkView(builder, element.getSimpleName().toString(), field);
+                viewHolder.addField(fieldSpec);
+                createdFields.put(String.valueOf(field.value()), fieldSpec.name);
+                BindingUtil.bindLinkPreview(onBindViewHolder, field,fieldSpec.name, fieldSpec.name);
             } else {
                 BindingUtil.bindVisibilityView(onBindViewHolder, createdFields.get(String.valueOf(field.value())), fieldSpec.name);
             }
