@@ -5,6 +5,7 @@ import com.mnayef.autoadapter.R;
 import com.mnayef.autoadapter.model.AllModel;
 import com.mnayef.autoadapter.model.FrescoModel;
 import com.mnayef.autoadapter.model.GifModel;
+import com.mnayef.autoadapter.model.LinkModel;
 import com.mnayef.autoadapter.model.MixModel;
 import com.mnayef.autoadapter.model.PFWithoutProgressModel;
 import com.mnayef.autoadapter.model.PicassoFrescoModel;
@@ -138,5 +139,15 @@ public class TestData {
             video.add(videoModel);
         }
         return video;
+    }
+
+    public List<LinkModel> getLinks() {
+        List<LinkModel> links = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            LinkModel link = new LinkModel();
+            link.setLink("https://github.com/mnayef/AndroidLinkPreview");
+            links.add(link);
+        }
+        return links;
     }
 }

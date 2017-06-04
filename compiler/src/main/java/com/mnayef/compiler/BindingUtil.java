@@ -1,5 +1,6 @@
 package com.mnayef.compiler;
 
+import com.mnayef.annotations.Link;
 import com.squareup.javapoet.MethodSpec;
 
 /**
@@ -25,4 +26,18 @@ public class BindingUtil {
         onBindViewHolder.addStatement("holder.$N.setVisibility($N.get($N).is$N() ? $T.VISIBLE : $T.GONE)", fieldName, "list", "position", StringUtil.makeFirstCharToUpper(methodName), ClassesNames.VIEW, ClassesNames.VIEW);
     }
 
+    public static void bindLinkPreview(MethodSpec.Builder onBindViewHolder, Link link, String fieldName, String methodName) {
+        if (!link.failedLoadMag().isEmpty()) {
+            onBindViewHolder.addStatement("holder.$N.setFailedLoadMsg($S)", fieldName, link.failedLoadMag());
+        } else if (link.failedLoadMagRes() != 0) {
+            onBindViewHolder.addStatement("holder.$N.setFailedLoadMsg($L)", fieldName, link.failedLoadMagRes());
+        }
+
+        if (!link.invalidLinkMag().isEmpty()) {
+            onBindViewHolder.addStatement("holder.$N.setInvalidLinkMsg($S)", fieldName, link.invalidLinkMag());
+        } else if (link.invalidLinkMagRes() != 0) {
+            onBindViewHolder.addStatement("holder.$N.setInvalidLinkMsg($L)", fieldName, link.invalidLinkMagRes());
+        }
+        onBindViewHolder.addStatement("holder.$N.load($N.get($N).get$N())", fieldName, "list", "position", StringUtil.makeFirstCharToUpper(methodName));
+    }
 }

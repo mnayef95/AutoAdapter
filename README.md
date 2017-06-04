@@ -38,6 +38,7 @@ annotationProcessor 'com.github.mnayef.AutoAdapter:compiler:v1.0.0'
 * VideoView
 * Visibility
 * Clickable
+* LinkPreview ([AndroidLinkPreview](https://github.com/mnayef/AndroidLinkPreview))
 
 ### How to use? ###
 

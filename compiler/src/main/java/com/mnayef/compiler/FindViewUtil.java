@@ -2,6 +2,7 @@ package com.mnayef.compiler;
 
 import com.mnayef.annotations.Check;
 import com.mnayef.annotations.Image;
+import com.mnayef.annotations.Link;
 import com.mnayef.annotations.Radio;
 import com.mnayef.annotations.Text;
 import com.mnayef.annotations.Video;
@@ -51,4 +52,7 @@ public class FindViewUtil {
         builder.addStatement(fieldName + " = ($T) itemView.findViewById($L)", ClassesNames.TEXT_VIEW, viewId);
     }
 
+    public static void findLinkView(MethodSpec.Builder builder, String fieldName, Link link) {
+        builder.addStatement(fieldName + " = ($T) itemView.findViewById($L)", ClassesNames.LINK_PREVIEW, link.value());
+    }
 }
