@@ -1,6 +1,11 @@
 package com.mnayef.autoadapter.model;
 
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
+
 import com.mnayef.annotations.Adapter;
+import com.mnayef.annotations.Click;
 import com.mnayef.annotations.Link;
 import com.mnayef.autoadapter.R;
 
@@ -20,5 +25,10 @@ public class LinkModel {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Click(R.id.link_preview)
+    public void comment(RecyclerView.Adapter adapter, int position, View view) {
+        Toast.makeText(view.getContext(), "Link: " + getLink(), Toast.LENGTH_SHORT).show();
     }
 }
