@@ -84,24 +84,12 @@ public class MixModel {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDate() {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public String getThumbnail() {
         return thumbnail;
-    }
-
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
     }
 
     public String getImage() {
@@ -110,10 +98,6 @@ public class MixModel {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getId() {
@@ -128,6 +112,11 @@ public class MixModel {
     @Click(R.id.comment)
     public void comment(RecyclerView.Adapter adapter, int position, View view) {
         Toast.makeText(view.getContext(), "Comment: " + getId(), Toast.LENGTH_SHORT).show();
+    }
+
+    @LongClick(R.id.comment)
+    public void commentLongClick(RecyclerView.Adapter adapter, int position, View view) {
+        Toast.makeText(view.getContext(), "LongClick Comment: " + getId(), Toast.LENGTH_SHORT).show();
     }
 }
 ```
