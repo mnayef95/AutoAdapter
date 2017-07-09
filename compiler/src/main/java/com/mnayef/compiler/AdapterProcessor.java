@@ -299,16 +299,22 @@ public final class AdapterProcessor extends AbstractProcessor {
             builder.addStatement("\nitemView.findViewById($L).setOnClickListener(new $T(){" +
                     "\n@Override\n" +
                     "public void onClick($T view) {\n" +
-                    "$N.get(getAdapterPosition()).$N($N, $N, $N);\n" +
+                    "   int position = getAdapterPosition();\n" +
+                    "   if (position != RecyclerView.NO_POSITION){\n" +
+                    "       $N.get(position).$N($N, $N, $N);\n" +
+                    "   }\n" +
                     "}\n" +
-                    "})", click.value(), ClassesNames.ON_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "getAdapterPosition()", "view");
+                    "})", click.value(), ClassesNames.ON_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "position", "view");
         } else {
             builder.addStatement("\n$N.setOnClickListener(new $T(){" +
                     "\n@Override\n" +
                     "public void onClick($T view) {\n" +
-                    "$N.get(getAdapterPosition()).$N($N, $N, $N);\n" +
+                    "   int position = getAdapterPosition();\n" +
+                    "   if (position != RecyclerView.NO_POSITION){\n" +
+                    "       $N.get(position).$N($N, $N, $N);\n" +
+                    "   }\n" +
                     "}\n" +
-                    "})", fieldName, ClassesNames.ON_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "getAdapterPosition()", "view");
+                    "})", fieldName, ClassesNames.ON_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "position", "view");
         }
     }
 
@@ -317,18 +323,24 @@ public final class AdapterProcessor extends AbstractProcessor {
             builder.addStatement("\nitemView.findViewById($L).setOnLongClickListener(new $T(){" +
                     "\n@Override\n" +
                     "public boolean onLongClick($T view) {\n" +
-                    "$N.get(getAdapterPosition()).$N($N, $N, $N);\n" +
+                    "   int position = getAdapterPosition();\n" +
+                    "   if (position != RecyclerView.NO_POSITION){\n" +
+                    "       $N.get(position).$N($N, $N, $N);\n" +
+                    "   }\n" +
                     "return false;\n" +
                     "}\n" +
-                    "})", click.value(), ClassesNames.ON_LONG_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "getAdapterPosition()", "view");
+                    "})", click.value(), ClassesNames.ON_LONG_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "position", "view");
         } else {
             builder.addStatement("\n$N.setOnClickLongListener(new $T(){" +
                     "\n@Override\n" +
                     "public boolean onLongClick($T view) {\n" +
-                    "$N.get(getAdapterPosition()).$N($N, $N, $N);\n" +
+                    "   int position = getAdapterPosition();\n" +
+                    "   if (position != RecyclerView.NO_POSITION){\n" +
+                    "       $N.get(position).$N($N, $N, $N);\n" +
+                    "   }\n" +
                     "return false;\n" +
                     "}\n" +
-                    "})", fieldName, ClassesNames.ON_LONG_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "getAdapterPosition()", "view");
+                    "})", fieldName, ClassesNames.ON_LONG_CLICK, ClassesNames.VIEW, "list", methodName, adapterName + ".this", "position", "view");
         }
     }
 
