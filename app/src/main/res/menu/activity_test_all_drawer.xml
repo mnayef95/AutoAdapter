@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fresco"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Fresco" />
+        <item
+            android:id="@+id/nav_picasso"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Picasso" />
+        <item
+            android:id="@+id/nav_f_and_p"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Fresco &amp; Picasso" />
+        <item
+            android:id="@+id/nav_f_and_p_without_progress"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="F &amp; P without progress" />
+        <item
+            android:id="@+id/nav_gif"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Gif" />
+        <item
+            android:id="@+id/nav_video"
+            android:icon="@drawable/ic_videocam_black_24dp"
+            android:title="Video" />
+        <item
+            android:id="@+id/nav_all"
+            android:icon="@drawable/ic_all_inclusive_black_24dp"
+            android:title="All" />
+        <item
+            android:id="@+id/nav_mix"
+            android:icon="@drawable/ic_all_inclusive_black_24dp"
+            android:title="Mix" />
+        <item
+            android:id="@+id/nav_links"
+            android:icon="@drawable/ic_link"
+            android:title="Link Preview" />
+    </group>
+
+</menu>
