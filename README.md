@@ -39,6 +39,7 @@ annotationProcessor 'com.github.mnayef.AutoAdapter:compiler:v1.0.2'
 * Visibility
 * Click
 * LongClick
+* Code
 * LinkPreview ([AndroidLinkPreview](https://github.com/mnayef/AndroidLinkPreview))
 
 ### How to use? ###
@@ -80,6 +81,7 @@ public class MixModel {
     @Image(value = R.id.image, library = ImageLibraries.FRESCO, progressId = R.id.image_progress, source = ImageSource.URL)
     private String image = "";
 
+    @Code("if (holder.title.getText().toString().isEmpty()) {\nholder.title.setVisibility(android.view.View.GONE);\n}\n")
     public String getTitle() {
         return title;
     }

@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.mnayef.annotations.Adapter;
 import com.mnayef.annotations.Click;
+import com.mnayef.annotations.Code;
 import com.mnayef.annotations.Image;
 import com.mnayef.annotations.LongClick;
 import com.mnayef.annotations.Text;
@@ -22,6 +23,7 @@ import com.mnayef.autoadapter.R;
 public class MixModel {
 
     private int id;
+
     @Text(R.id.title)
     private String title = "";
     @Text(R.id.date)
@@ -31,6 +33,7 @@ public class MixModel {
     @Image(value = R.id.image, library = ImageLibraries.FRESCO, progressId = R.id.image_progress, source = ImageSource.URL)
     private String image = "";
 
+    @Code("if (holder.title.getText().toString().isEmpty()) {\nholder.title.setVisibility(android.view.View.GONE);\n}\n")
     public String getTitle() {
         return title;
     }

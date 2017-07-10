@@ -4,6 +4,7 @@ import com.google.auto.service.AutoService;
 import com.mnayef.annotations.Adapter;
 import com.mnayef.annotations.Check;
 import com.mnayef.annotations.Click;
+import com.mnayef.annotations.Code;
 import com.mnayef.annotations.Image;
 import com.mnayef.annotations.Link;
 import com.mnayef.annotations.LongClick;
@@ -58,6 +59,7 @@ public final class AdapterProcessor extends AbstractProcessor {
             Radio.class,
             Check.class,
             Visibility.class,
+            Code.class,
             Link.class
     );
 
@@ -119,6 +121,9 @@ public final class AdapterProcessor extends AbstractProcessor {
 
                 Visibility visibility = enclosedElement.getAnnotation(Visibility.class);
                 if (visibility != null) fields.put(enclosedElement, visibility);
+
+                Code code = enclosedElement.getAnnotation(Code.class);
+                if (code != null) fields.put(enclosedElement, code);
 
                 Link link = enclosedElement.getAnnotation(Link.class);
                 if (link != null) fields.put(enclosedElement, link);
@@ -280,6 +285,9 @@ public final class AdapterProcessor extends AbstractProcessor {
             } else {
                 BindingUtil.bindVisibilityView(onBindViewHolder, createdFields.get(String.valueOf(field.value())), fieldSpec.name);
             }
+        } else if (baseField instanceof Code) {
+            Code code = (Code) baseField;
+            onBindViewHolder.addCode(code.value());
         } else if (baseField instanceof Link) {
             Link field = (Link) baseField;
             fieldSpec = FieldSpec.builder(ClassesNames.LINK_PREVIEW, element.getSimpleName().toString(), Modifier.PRIVATE).build();
