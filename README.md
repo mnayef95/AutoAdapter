@@ -23,8 +23,8 @@ allprojects {
 -----
 
 ```
-provided 'com.github.mnayef.AutoAdapter:annotations:v1.0.2'
-annotationProcessor 'com.github.mnayef.AutoAdapter:compiler:v1.0.2'
+provided 'com.github.mnayef.AutoAdapter:annotations:v1.0.3'
+annotationProcessor 'com.github.mnayef.AutoAdapter:compiler:v1.0.3'
 ```
 
 
